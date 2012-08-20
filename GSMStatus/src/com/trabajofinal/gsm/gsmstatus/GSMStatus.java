@@ -4,6 +4,9 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.telephony.NeighboringCellInfo;
 import android.telephony.TelephonyManager;
@@ -11,7 +14,6 @@ import android.telephony.gsm.GsmCellLocation;
 import android.widget.TextView;
 
 public class GSMStatus extends Activity {
-
     	   /** Called when the activity is first created. */
     	   @Override
     	   public void onCreate(Bundle savedInstanceState) {
@@ -21,8 +23,10 @@ public class GSMStatus extends Activity {
     	       TextView textMCC = (TextView)findViewById(R.id.mcc);
     	       TextView textMNC = (TextView)findViewById(R.id.mnc);
     	       TextView textCID = (TextView)findViewById(R.id.cid);
-    	 
-    	       
+    	       TextView textWiFi = (TextView)findViewById(R.id.wifiInfo);
+
+    	       // Get GSM status
+
     	       //retrieve a reference to an instance of TelephonyManager
     	       TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
     	       GsmCellLocation cellLocation = (GsmCellLocation)telephonyManager.getCellLocation();
@@ -59,5 +63,22 @@ public class GSMStatus extends Activity {
     	       }
     	       
     	       Neighboring.setText(stringNeighboring);
+
+    	       // Get Wi-Fi status
+
+    	   		WifiManager wifi;
+    			wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+    			// Get WiFi status
+    			WifiInfo info = wifi.getConnectionInfo();
+    			textWiFi.append(info.toString());
+
+    			// List available networks
+    			List<WifiConfiguration> configs = wifi.getConfiguredNetworks();
+    			for (WifiConfiguration config : configs) {
+    				textWiFi.append("\n\n" + config.toString());
+    			}
+
+
+    	       
     	   }
 }

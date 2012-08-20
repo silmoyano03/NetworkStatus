@@ -4,5 +4,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_gsmstatus">GSMStatus</string>
+    <string name="gsmStatus">GSM status:</string>
+    <string name="wifiStatus">Wi-Fi status:</string>
 
 </resources>

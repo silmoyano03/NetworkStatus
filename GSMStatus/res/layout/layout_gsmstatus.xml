@@ -1,45 +1,71 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <TextView
-        android:id="@+id/gsmcelllocation"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/LinearLayout"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        tools:context=".GSMStatus" />
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/mcc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/gsmcelllocation"
-        tools:context=".GSMStatus" />
+        <!-- GSM STATUS -->
 
-    <TextView
-        android:id="@+id/mnc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/mcc"
-        tools:context=".GSMStatus" />
+        <TextView
+            android:id="@+id/gsmStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:text="@string/gsmStatus"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/cid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/mnc"
-        tools:context=".GSMStatus" />
+        <TextView
+            android:id="@+id/gsmcelllocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
 
-    <TextView
-        android:id="@+id/neighboring"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/cid"
-        tools:context=".GSMStatus" />
+        <TextView
+            android:id="@+id/mcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/mnc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+        <TextView
+            android:id="@+id/cid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+        <TextView
+            android:id="@+id/neighboring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+        <!-- Wi-Fi STATUS -->
+
+        <TextView
+            android:id="@+id/wifiStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:text="@string/wifiStatus"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/wifiInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+
+    </LinearLayout>
+
+</ScrollView>
